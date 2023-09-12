@@ -59,8 +59,7 @@ ul li button {
     padding: 1rem 2em;
     font-size: 1.3rem;
     cursor: pointer;
-} ul li button:hover,
-  ul li button.active {
+} ul li button:hover {
       transition: 0.15s;
       background-color: var(--button-hover-color);
   }
