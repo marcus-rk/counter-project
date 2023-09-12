@@ -86,7 +86,7 @@ function changeButtonHoverColor(currentColor,hoverColor){
 }
 
 /* Hover method needed to be made with javascript, thus
- it overried the pseudo :hover in css, when changing button background */
+ it overrides the pseudo :hover in css, when changing button background */
 function hoverEffect() {
     this.style.transition = "background-color 0.15s";
     this.style.backgroundColor = currentHoverButtonColor;
