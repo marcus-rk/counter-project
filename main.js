@@ -16,10 +16,14 @@ let colorNegativeDark = getComputedStyle(document.documentElement).getPropertyVa
 let colorNegativeMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-medium");
 let colorNegativeLight = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-light");
 
-// Color palette from CSS when counter < 0
+// Color palette from CSS when counter = 0
 let colorZeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-dark");
 let colorZeroMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-medium");
 let colorZeroLight = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-light");
+
+// Current hover color (default is colorZeroDark)
+let currentHoverButtonColor = colorZeroDark;
+let currentButtonColor = colorZeroLight;
 ////////////////////////////////////////
 
 // Counter starts at zero
@@ -50,16 +54,18 @@ function reset() {
 
 // Check if background color need to be updated
 function checkColorUpdate() {
-    console.log("UPDATED AT:", counter)
     if (counter > 0) {
         changeSectionColor(colorPositiveMedium);
         changeButtonsColor(colorPositiveLight);
+        changeButtonHoverColor(colorPositiveLight,colorPositiveDark)
     } else if (counter < 0) {
         changeSectionColor(colorNegativeMedium);
         changeButtonsColor(colorNegativeLight);
+        changeButtonHoverColor(colorNegativeLight,colorNegativeDark)
     } else {
         changeSectionColor(colorZeroMedium);
         changeButtonsColor(colorZeroLight);
+        changeButtonHoverColor(colorZeroLight,colorZeroDark)
     }
 }
 
@@ -71,4 +77,19 @@ function changeButtonsColor(color) {
     buttonElements.forEach((button) => {
         button.style.backgroundColor = color;
     });
+}
+
+function changeButtonHoverColor(currentColor,hoverColor){
+    currentButtonColor = currentColor;
+    currentHoverButtonColor = hoverColor;
+}
+
+/* Hover method needed to be made with javascript, thus
+ it overried the pseudo :hover in css, when changing button background */
+function onHover(hoveredElement) {
+    hoveredElement.style.backgroundColor = currentHoverButtonColor;
+}
+
+function offHover(hoveredElement) {
+    hoveredElement.style.backgroundColor = currentButtonColor;
 }
