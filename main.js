@@ -78,6 +78,7 @@ function changeSectionColor(color) {
 function changeButtonsColor(color) {
     buttonElements.forEach((button) => {
         button.style.backgroundColor = color;
+        button.style.transition = "background-color 0.15s";
     });
 }
 
