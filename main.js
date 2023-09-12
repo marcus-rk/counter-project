@@ -97,5 +97,6 @@ function endHoverEffect() {
 // Attach event listeners to apply and remove the hover effect for each button
 buttonElements.forEach(function (button) {
     button.addEventListener("mouseover", hoverEffect);
+    button.addEventListener("click", hoverEffect); // Needed to keep the hover-effect when color is updated
     button.addEventListener("mouseout", endHoverEffect);
 });
