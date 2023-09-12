@@ -72,6 +72,7 @@ function checkColorUpdate() {
 
 function changeSectionColor(color) {
     sectionElement.style.backgroundColor = color;
+    sectionElement.style.transition = "background-color 0.15s";
 }
 
 function changeButtonsColor(color) {
