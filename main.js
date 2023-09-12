@@ -5,7 +5,6 @@
 const sectionElement = document.querySelector("section");
 const buttonElements = document.querySelectorAll("ul li button");
 
-
 // Color palette from CSS when counter > 0
 let colorPositiveDark = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-dark");
 let colorPositiveMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-medium");
@@ -21,7 +20,7 @@ let colorZeroDark = getComputedStyle(document.documentElement).getPropertyValue(
 let colorZeroMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-medium");
 let colorZeroLight = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-light");
 
-// Current hover color (default is colorZeroDark)
+// Current button color and current hover color (default is colorZeroDark and colorZeroLight)
 let currentHoverButtonColor = colorZeroDark;
 let currentButtonColor = colorZeroLight;
 ////////////////////////////////////////
