@@ -26,10 +26,6 @@ function reset(){
     checkColorUpdate();
 }
 
-// Const for checkColorUpdate function
-const sectionElement = document.querySelector("section");
-const buttonElements = document.querySelectorAll("ul li button");
-
     // Color palette from CSS when counter > 0
     let colorPositiveDark = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-dark");
     let colorPositiveMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-medium");
@@ -49,22 +45,26 @@ const buttonElements = document.querySelectorAll("ul li button");
 function checkColorUpdate() {
     console.log("UPDATED AT:", counter)
     if(counter > 0) {
-        sectionElement.style.backgroundColor = colorPositiveMedium;
-
-        buttonElements.forEach((button) => {
-            button.style.backgroundColor = colorPositiveLight;
-        });
+        changeSectionColor(colorPositiveMedium);
+        changeButtonsColor(colorPositiveLight);
     } else if (counter < 0){
-        sectionElement.style.backgroundColor = colorNegativeMedium;
-
-        buttonElements.forEach((button) => {
-            button.style.backgroundColor = colorNegativeLight;
-        });
+        changeSectionColor(colorNegativeMedium);
+        changeButtonsColor(colorNegativeLight);
     } else {
-        sectionElement.style.backgroundColor = colorZeroMedium;
-
-        buttonElements.forEach((button) => {
-            button.style.backgroundColor = colorZeroLight;
-        });
+        changeSectionColor(colorZeroMedium);
+        changeButtonsColor(colorZeroLight);
     }
+}
+
+// Const for section and button elements
+const sectionElement = document.querySelector("section");
+const buttonElements = document.querySelectorAll("ul li button");
+function changeSectionColor(color){
+    sectionElement.style.backgroundColor = color;
+}
+
+function changeButtonsColor(color){
+    buttonElements.forEach((button) => {
+        button.style.backgroundColor = color;
+    });
 }
