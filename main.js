@@ -6,19 +6,19 @@ const sectionElement = document.querySelector("section");
 const buttonElements = document.querySelectorAll("ul li button");
 
 // Color palette from CSS when counter > 0
-let colorPositiveDark = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-dark");
-let colorPositiveMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-medium");
-let colorPositiveLight = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-light");
+const colorPositiveDark = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-dark");
+const colorPositiveMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-medium");
+const colorPositiveLight = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-light");
 
 // Color palette from CSS when counter < 0
-let colorNegativeDark = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-dark");
-let colorNegativeMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-medium");
-let colorNegativeLight = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-light");
+const colorNegativeDark = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-dark");
+const colorNegativeMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-medium");
+const colorNegativeLight = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-light");
 
 // Color palette from CSS when counter = 0
-let colorZeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-dark");
-let colorZeroMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-medium");
-let colorZeroLight = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-light");
+const colorZeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-dark");
+const colorZeroMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-medium");
+const colorZeroLight = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-light");
 
 // Current button color and current hover color (default is colorZeroDark and colorZeroLight)
 let currentHoverButtonColor = colorZeroDark;
