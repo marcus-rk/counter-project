@@ -21,12 +21,12 @@ const colorZeroMedium = getComputedStyle(document.documentElement).getPropertyVa
 const colorZeroLight = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-light");
 
 // Current button color and current hover color (default is colorZeroDark and colorZeroLight)
-let currentHoverButtonColor = colorZeroDark;
-let currentButtonColor = colorZeroLight;
+var currentHoverButtonColor = colorZeroDark;
+var currentButtonColor = colorZeroLight;
 ////////////////////////////////////////
 
 // Counter starts at zero
-let counter = 0;
+var counter = 0;
 
 // Making a function for increase button
 function increase() {
