@@ -46,9 +46,11 @@ function decrease() {
 
 // Making a reset function for reset button
 function reset() {
-    counter = 0;
-    document.getElementById("count-value").innerHTML = counter;
-    checkColorUpdate();
+    if(counter !== 0) { // no need to update if already 0
+        counter = 0;
+        document.getElementById("count-value").innerHTML = counter;
+        checkColorUpdate();
+    }
 }
 
 // Check if background color need to be updated
