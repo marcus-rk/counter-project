@@ -85,10 +85,16 @@ function changeButtonHoverColor(currentColor,hoverColor){
 
 /* Hover method needed to be made with javascript, thus
  it overried the pseudo :hover in css, when changing button background */
-function onHover(hoveredElement) {
-    hoveredElement.style.backgroundColor = currentHoverButtonColor;
+function onHover() {
+    this.style.backgroundColor = currentHoverButtonColor;
 }
 
-function offHover(hoveredElement) {
-    hoveredElement.style.backgroundColor = currentButtonColor;
+function offHover() {
+    this.style.backgroundColor = currentButtonColor;
 }
+
+// Attach event listeners to each button
+buttonElements.forEach((button) => {
+    button.addEventListener("mouseover", onHover);
+    button.addEventListener("mouseout", offHover);
+});
