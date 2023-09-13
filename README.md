@@ -16,4 +16,4 @@ The JavaScript code in this project plays a crucial role in managing the counter
 * **setTheme(theme)**: Changes the CSS theme of the page based on the provided theme name.
 
 ## Demo
-https://marcus-rk.github.io/counter-project/
+Open in new tab or window: https://marcus-rk.github.io/counter-project/
