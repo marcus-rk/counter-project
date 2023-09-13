@@ -14,3 +14,6 @@ The JavaScript code in this project plays a crucial role in managing the counter
 * **reset()**: Resets the counter to zero.
 * **checkColorUpdate()**: Determines the background color based on the counter's value and updates the theme via setTheme().
 * **setTheme(theme)**: Changes the CSS theme of the page based on the provided theme name.
+
+## Demo
+https://marcus-rk.github.io/counter-project/
