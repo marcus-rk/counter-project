@@ -1,6 +1,9 @@
 # Counter-project
 **Counter Project** is a straightforward and interactive web application designed to demonstrate the functionality of a simple counter with dynamic styling. It features three buttons: Increase, Decrease, and Reset. What sets this counter apart is its adaptive design, which changes based on the counter's value. The project combines HTML, CSS, and JavaScript to create an engaging user experience.
 
+## Demo
+Open in new tab or window: https://marcus-rk.github.io/counter-project/
+
 ## Technologies Used
 * **HTML**: The project's structure and content are built using HTML.
 * **CSS**: CSS styles are applied to create an attractive and responsive design.
@@ -14,6 +17,3 @@ The JavaScript code in this project plays a crucial role in managing the counter
 * **reset()**: Resets the counter to zero.
 * **checkColorUpdate()**: Determines the background color based on the counter's value and updates the theme via setTheme().
 * **setTheme(theme)**: Changes the CSS theme of the page based on the provided theme name.
-
-## Demo
-Open in new tab or window: https://marcus-rk.github.io/counter-project/
