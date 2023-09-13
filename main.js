@@ -1,32 +1,7 @@
 // Makj0005
 
-////////////////////////////////////////
-// Const for section and button elements
-const sectionElement = document.querySelector("section");
-const buttonElements = document.querySelectorAll("ul li button");
-
-// Color palette from CSS when counter > 0
-const colorPositiveDark = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-dark");
-const colorPositiveMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-medium");
-const colorPositiveLight = getComputedStyle(document.documentElement).getPropertyValue("--color-positive-light");
-
-// Color palette from CSS when counter < 0
-const colorNegativeDark = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-dark");
-const colorNegativeMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-medium");
-const colorNegativeLight = getComputedStyle(document.documentElement).getPropertyValue("--color-negative-light");
-
-// Color palette from CSS when counter = 0
-const colorZeroDark = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-dark");
-const colorZeroMedium = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-medium");
-const colorZeroLight = getComputedStyle(document.documentElement).getPropertyValue("--color-zero-light");
-
-// Current button color and current hover color (default is colorZeroDark and colorZeroLight)
-var currentHoverButtonColor = colorZeroDark;
-var currentButtonColor = colorZeroLight;
-////////////////////////////////////////
-
 // Counter starts at zero
-var counter = 0;
+let counter = 0;
 
 // Making a function for increase button
 function increase() {
@@ -56,51 +31,15 @@ function reset() {
 // Check if background color need to be updated
 function checkColorUpdate() {
     if (counter > 0) {
-        changeSectionColor(colorPositiveMedium);
-        changeButtonsColor(colorPositiveLight);
-        changeButtonHoverColor(colorPositiveLight,colorPositiveDark)
+        setTheme("positive");
     } else if (counter < 0) {
-        changeSectionColor(colorNegativeMedium);
-        changeButtonsColor(colorNegativeLight);
-        changeButtonHoverColor(colorNegativeLight,colorNegativeDark)
+        setTheme("negative");
     } else {
-        changeSectionColor(colorZeroMedium);
-        changeButtonsColor(colorZeroLight);
-        changeButtonHoverColor(colorZeroLight,colorZeroDark)
+        setTheme("zero");
     }
 }
 
-function changeSectionColor(color) {
-    sectionElement.style.backgroundColor = color;
-    sectionElement.style.transition = "background-color 0.15s";
+// Changing the theme in CSS file
+function setTheme(theme) {
+    document.documentElement.className = theme;
 }
-
-function changeButtonsColor(color) {
-    buttonElements.forEach((button) => {
-        button.style.backgroundColor = color;
-        button.style.transition = "background-color 0.15s";
-    });
-}
-
-function changeButtonHoverColor(currentColor,hoverColor){
-    currentButtonColor = currentColor;
-    currentHoverButtonColor = hoverColor;
-}
-
-/* Hover method needed to be made with javascript, thus
- it overrides the pseudo :hover in css, when changing button background */
-function hoverEffect() {
-    this.style.transition = "background-color 0.15s";
-    this.style.backgroundColor = currentHoverButtonColor;
-}
-
-function endHoverEffect() {
-    this.style.backgroundColor = currentButtonColor;
-}
-
-// Attach event listeners to apply and remove the hover effect for each button
-buttonElements.forEach(function (button) {
-    button.addEventListener("mouseover", hoverEffect);
-    button.addEventListener("click", hoverEffect); // Needed to keep the hover-effect when color is updated
-    button.addEventListener("mouseout", endHoverEffect);
-});
